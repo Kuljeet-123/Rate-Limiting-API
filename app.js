@@ -5,7 +5,9 @@ const rateLimt = require('express-rate-limit');
 
 const limiter = rateLimt({
     max: 5,
-    windowMs: 10000
+    windowMs: 10000,
+    standardHeaders: true,
+    legacyHeaders: true,
 })
 
 app.get('/universities', limiter, (req, res)=>{
